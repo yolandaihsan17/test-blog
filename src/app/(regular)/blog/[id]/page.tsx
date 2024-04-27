@@ -1,7 +1,8 @@
 import { ArrowCircleLeft } from "@mui/icons-material";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, CircularProgress, Stack, Typography } from "@mui/material";
 import Link from "next/link";
 import { Comment } from "@/types/comment";
+import { Suspense } from "react";
 
 export default async function SinglePostPage({
   params,
@@ -9,7 +10,6 @@ export default async function SinglePostPage({
   params: { id: string };
 }) {
   const data = await getData(params.id);
-  const comments = await getComments(params.id);
   return (
     <Stack padding={"8rem 0"} gap={2}>
       <Link href={"/blog"} color="unset">
@@ -23,24 +23,41 @@ export default async function SinglePostPage({
       </Stack>
       <Typography component={"p"}>{data.body}</Typography>
 
-      <Box component={"section"} marginTop={12}>
-        <Typography component={"h4"} variant="h4">
-          Comments ({comments.length})
-        </Typography>
-
-        <Stack gap={6} marginTop={4}>
-          {comments.map((item: Comment) => (
-            <Stack key={item.id}>
-              <Typography variant="h6">{item.name}</Typography>
-              <Typography variant="body2">{item.email}</Typography>
-              <Typography variant="body1" marginTop={2}>
-                {item.body}
-              </Typography>
-            </Stack>
-          ))}
-        </Stack>
-      </Box>
+      <Suspense
+        fallback={
+          <CircularProgress
+            variant="indeterminate"
+            size={20}
+            sx={{ marginTop: 2 }}
+          />
+        }
+      >
+        <CommentSection id={params.id} />
+      </Suspense>
     </Stack>
+  );
+}
+
+async function CommentSection({ id }: { id: string }) {
+  const comments = await getComments(id);
+  return (
+    <Box component={"section"} marginTop={12}>
+      <Typography component={"h4"} variant="h4">
+        Comments ({comments.length})
+      </Typography>
+
+      <Stack gap={6} marginTop={4}>
+        {comments.map((item: Comment) => (
+          <Stack key={item.id}>
+            <Typography variant="h6">{item.name}</Typography>
+            <Typography variant="body2">{item.email}</Typography>
+            <Typography variant="body1" marginTop={2}>
+              {item.body}
+            </Typography>
+          </Stack>
+        ))}
+      </Stack>
+    </Box>
   );
 }
 
