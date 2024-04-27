@@ -12,7 +12,7 @@ export default async function BlogPage() {
 }
 
 async function getData() {
-  const res = await fetch(`http://127.0.0.1/api/posts`);
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/`);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }

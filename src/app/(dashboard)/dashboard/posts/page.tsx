@@ -22,7 +22,7 @@ export default async function DashboardPosts() {
 }
 
 async function getPost() {
-  const response = await fetch("http://127.0.0.1/api/posts");
+  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
   const jsonified = await response.json();
   return jsonified;
 }

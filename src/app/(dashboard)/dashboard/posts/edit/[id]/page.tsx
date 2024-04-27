@@ -19,6 +19,8 @@ export default async function EditPost({ params }: { params: { id: string } }) {
 }
 
 async function getPostDetail(id: string) {
-  const response = await fetch(`http://127.0.0.1/api/posts/${id}`);
+  const response = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${id}`
+  );
   return response.json();
 }

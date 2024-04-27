@@ -48,7 +48,7 @@ export default async function Dashboard() {
 interface OverviewCardProps {
   title: string;
   withoutPercentage?: boolean;
-  data: string;
+  data: number;
   percentageString?: string;
 }
 
@@ -82,7 +82,16 @@ function OverviewCard(props: OverviewCardProps) {
 }
 
 async function getOverview() {
-  const response = await fetch("http://127.0.0.1/api/dashboard/overview");
-  const jsonified = await response.json();
-  return jsonified;
+  // const response = await fetch("http://127.0.0.1/api/dashboard/overview");
+  // const jsonified = await response.json();
+  const response = {
+    totalPost: 523,
+    postThisMonth: 98,
+    increaseThisMonth: 30,
+    usersThisMonth: 100,
+    usersIncreaseThisMonth: 34,
+    visitsThisMonth: 2394,
+    visitsIncrease: 40,
+  };
+  return response;
 }
