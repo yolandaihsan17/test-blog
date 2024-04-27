@@ -34,3 +34,6 @@ Testing can be run using command `npm run test`. I implemented Vitest library. T
 
 ### Typesafe
 Common interfaces are stored in `src/types`, e.g `post` and `comment`. While one-time-use interface will be stored in each of their files.
+
+### Deployments
+this demo app is deployed at `test-blog-eta-seven.vercel.app`
