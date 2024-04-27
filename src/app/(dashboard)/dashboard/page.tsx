@@ -6,7 +6,7 @@ export default async function Dashboard() {
   const data = await getOverview();
   return (
     <Grid container spacing={3} padding={"4rem 2rem"}>
-      <Grid item xs={8}>
+      <Grid item md={8} xs={12}>
         {OverviewCard({
           title: "Total Post All Time",
           data: data.totalPost,
@@ -14,7 +14,7 @@ export default async function Dashboard() {
         })}
       </Grid>
 
-      <Grid item xs={4}>
+      <Grid item md={4} xs={12}>
         {OverviewCard({
           title: "Total Post This Month",
           data: data.postThisMonth,
@@ -22,7 +22,7 @@ export default async function Dashboard() {
         })}
       </Grid>
 
-      <Grid item xs={4}>
+      <Grid item md={4} xs={12}>
         {OverviewCard({
           title: "Total Visits This Month",
           data: data.visitsThisMonth,
@@ -30,7 +30,7 @@ export default async function Dashboard() {
         })}
       </Grid>
 
-      <Grid item xs={8}>
+      <Grid item md={8} xs={12}>
         {OverviewCard({
           title: "Total Users This Month",
           data: data.usersThisMonth,

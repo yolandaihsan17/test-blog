@@ -5,7 +5,7 @@ export default async function EditPost({ params }: { params: { id: string } }) {
   const { id } = params;
   const data = await getPostDetail(id);
   return (
-    <Grid container padding={"4rem 0"}>
+    <Grid container sx={{ padding: { xs: "8rem 1rem", md: "8rem 0" } }}>
       <Grid item xs={0} md={3}></Grid>
       <Grid item xs={12} md={6}>
         <Stack gap={4}>

@@ -11,12 +11,16 @@ export default async function SinglePostPage({
 }) {
   const data = await getData(params.id);
   return (
-    <Stack padding={"8rem 0"} gap={2}>
+    <Stack sx={{ padding: { xs: "8rem 1rem", md: "8rem 0" } }} gap={2}>
       <Link href={"/blog"} color="unset">
         <ArrowCircleLeft fontSize="large" />
       </Link>
       <Stack gap={1}>
-        <Typography variant="h2" textTransform={"uppercase"}>
+        <Typography
+          variant="h2"
+          textTransform={"uppercase"}
+          sx={{ wordBreak: "break-all" }}
+        >
           {data.title}
         </Typography>
         <Typography variant="caption">by user: {data.userId}</Typography>
