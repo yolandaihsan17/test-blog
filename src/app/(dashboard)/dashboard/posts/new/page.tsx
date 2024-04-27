@@ -1,5 +1,5 @@
 import { Grid, Stack, Typography } from "@mui/material";
-import PostForm from "../components/form/form";
+import PostForm from "../../../../../components/dashboard/form/form";
 
 export default function NewPost() {
   return (

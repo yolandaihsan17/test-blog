@@ -1,7 +1,6 @@
 import SampleChart from "@/components/chart/chart";
 import { ArrowUpward } from "@mui/icons-material";
 import { Card, Grid, Stack, Typography } from "@mui/material";
-import { Chart, ChartItem } from "chart.js";
 
 export default async function Dashboard() {
   const data = await getOverview();
