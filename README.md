@@ -14,7 +14,7 @@ pnpm dev
 bun dev
 ```
 
-Open [http://127.0.0.1](http://127.0.0.1) with your browser to see the result.
+Open `http://localhost:3000` with your browser to see the result.
 
 ## Explanation
 ### Available Routes
