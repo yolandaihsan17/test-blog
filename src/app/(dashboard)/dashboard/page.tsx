@@ -82,8 +82,6 @@ function OverviewCard(props: OverviewCardProps) {
 }
 
 async function getOverview() {
-  // const response = await fetch("http://127.0.0.1/api/dashboard/overview");
-  // const jsonified = await response.json();
   const response = {
     totalPost: 523,
     postThisMonth: 98,
