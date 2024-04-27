@@ -82,7 +82,7 @@ function OverviewCard(props: OverviewCardProps) {
 }
 
 async function getOverview() {
-  const response = await fetch("http://localhost:3000/api/dashboard/overview");
+  const response = await fetch("http://127.0.0.1/api/dashboard/overview");
   const jsonified = await response.json();
   return jsonified;
 }

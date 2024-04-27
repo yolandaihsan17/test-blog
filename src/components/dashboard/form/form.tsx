@@ -35,7 +35,7 @@ export default function PostForm({
   };
 
   const postData = async () => {
-    await fetch("http://localhost:3000/api/posts/new", {
+    await fetch("http://127.0.0.1/api/posts/new", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -46,7 +46,7 @@ export default function PostForm({
 
   const patchData = async () => {
     if (!defaultData) return;
-    await fetch(`http://localhost:3000/api/posts/${defaultData.id}`, {
+    await fetch(`http://127.0.0.1/api/posts/${defaultData.id}`, {
       method: "PATCH",
       body: JSON.stringify(data),
       headers: {

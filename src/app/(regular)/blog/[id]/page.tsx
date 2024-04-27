@@ -45,13 +45,11 @@ export default async function SinglePostPage({
 }
 
 async function getData(id: string) {
-  const response = await fetch(`http://localhost:3000/api/posts/${id}`);
+  const response = await fetch(`http://127.0.0.1/api/posts/${id}`);
   return response.json();
 }
 
 async function getComments(id: string) {
-  const response = await fetch(
-    `http://localhost:3000/api/posts/${id}/comments`
-  );
+  const response = await fetch(`http://127.0.0.1/api/posts/${id}/comments`);
   return response.json();
 }
