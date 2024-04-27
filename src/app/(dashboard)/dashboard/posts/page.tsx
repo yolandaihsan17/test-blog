@@ -1,5 +1,5 @@
 import { Button, Stack, Typography } from "@mui/material";
-import PostTable from "../../../../components/dashboard/post-table/post-table";
+import PostTable from "@/components/dashboard/post-table/post-table";
 
 export default async function DashboardPosts() {
   const posts = await getPost();
