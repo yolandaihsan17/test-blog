@@ -16,21 +16,21 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Explanation
+### Available Routes
+1. `/` Root page. to engage user. Can be said as landing page
+2. `/blog`. Blog Page. Where user can see all post list.
+3. `/blog/:id` Post Page. Where user can see the Post Details. Post title, content, and comments
+4. `/dashboard` Admin Page. Admin can see overview of site performance.
+5. `/posts` Admin Post Page. Admin can check list of posts. And can delete post from this page.
+6. `/dashboard/posts/edit/:id` Edit post page.
+7. `/dashboard/posts/new` Create a new post page.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Use of Hooks
+To demonstrate the use of hooks. Here i implement it to save user (admin) data. If you want to check it, please go to dashboard pages. And at the top right of Navigation Bar, you can click on the user profile picture. Avatar url, name and status is stored in useContext API.
 
-## Learn More
+### Testing
+Testing can be run using command `npm run test`. I implemented Vitest library. The tests files can be checked at `__test__` folder.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Typesafe
+Common interfaces are stored in `src/types`, e.g `post` and `comment`. While one-time-use interface will be stored in each of their files.

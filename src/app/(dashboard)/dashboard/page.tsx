@@ -26,7 +26,7 @@ export default async function Dashboard() {
       <Grid item xs={4}>
         {OverviewCard({
           title: "Total Visits This Month",
-          data: (data.visitsThisMonth as string).toLocaleString("id-ID"),
+          data: data.visitsThisMonth,
           percentageString: `${data.visitsIncrease}% compared to last month`,
         })}
       </Grid>
