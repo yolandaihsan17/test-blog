@@ -1,5 +1,5 @@
 import { Stack } from "@mui/material";
-import PostList from "./post-list/post-list";
+import PostList from "@/components/post-list/post-list";
 
 export default async function BlogPage() {
   const data = await getData();
